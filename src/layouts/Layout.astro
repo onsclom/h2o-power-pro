@@ -10,7 +10,10 @@ const { title } = Astro.props
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="About H2O Power Pro" />
+    <meta
+      name="description"
+      content="Professional pressure washing services for your home or business."
+    />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
@@ -33,5 +36,14 @@ const { title } = Astro.props
     font-family: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans",
       source-sans-pro, sans-serif;
     font-size: larger;
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+    color: #333;
+  }
+
+  h1,
+  h2,
+  strong {
+    color: #111;
   }
 </style>
