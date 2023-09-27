@@ -1,0 +1,20 @@
+---
+type Props = {
+  reverse: boolean;
+}
+
+const { reverse } = Astro.props;
+---
+
+<div class={`imageTextContainer ${reverse ? "reverse" : ""}`} >
+  <img class="innerItem" src="/imgs/solar.webp" alt="Washing solar" />
+  <div class="innerItem">
+    <p><b>H2O Power Pro - Solar Panel Cleaning</b></p>
+    <p>
+      Protect your investment and maximize the efficiency of your system. We do
+      not use any chemicals that could potentially harm your solar panel system.
+      We truly rely on the PURE SPOT FREE WATER method to ensure your system is
+      protected and cleaned.
+    </p>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+---
+type Props = {
+  reverse: boolean;
+}
+
+const { reverse } = Astro.props;
+---
+
+<div class={`imageTextContainer ${reverse ? "reverse" : ""}`} >
+  <img class="innerItem" src="/imgs/bricks.webp" alt="Washing brick wall" />
+  <div class="innerItem">
+    <p><b>H2O Power Pro - Paver Cleaning and Sealing</b></p>
+    <p>
+      Paver sealing is a great option that offers immediate results enhancing
+      the beauty and character of your home producing a natural look or even a
+      high gloss finish. More importantly forming a protective barrier from
+      weather and staining.
+    </p>
+  </div>
+</div>

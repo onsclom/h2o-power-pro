@@ -1,0 +1,20 @@
+---
+type Props = {
+  reverse: boolean;
+}
+
+const { reverse } = Astro.props;
+---
+
+<div class={`imageTextContainer ${reverse ? "reverse" : ""}`} >
+  <img class="innerItem" src="/imgs/window.webp" alt="Window washing" />
+  <div class="innerItem">
+    <p><b>H2O Power Pro - Window Cleaning</b></p>
+    <p>
+      Our exterior window cleaning service provides amazing results using a PURE
+      SPOT FREE water fed pole. The soft brush does all the work leaving a spot
+      free shine. Our optional screen cleaning service will elevate the
+      appearance of your home. Contact us today for a free estimate.
+    </p>
+  </div>
+</div>
