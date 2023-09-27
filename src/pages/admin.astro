@@ -1,0 +1,78 @@
+---
+import Layout from "../layouts/Layout.astro"
+import { createClient } from "@vercel/kv"
+
+const kv = createClient({
+  url: import.meta.env.KV_REST_API_URL,
+  token: import.meta.env.KV_REST_API_TOKEN,
+})
+
+const services = (await kv.get("services")) as string[]
+---
+
+<Layout title="Admin Panel">
+  <main>
+    <h1>Admin</h1>
+    <!-- <h2>{cfg}</h2> -->
+    <form id="form">
+      <label>
+        Pavers
+        <input
+          type="checkbox"
+          name="pavers"
+          checked={services.includes("pavers")}
+        />
+      </label>
+      <br />
+      <label>
+        Windows
+        <input
+          type="checkbox"
+          name="windows"
+          checked={services.includes("windows")}
+        />
+      </label>
+      <br />
+      <label>
+        Solar panels
+        <input
+          type="checkbox"
+          name="solarPanels"
+          checked={services.includes("solarPanels")}
+        />
+      </label>
+      <br />
+      <!-- <label>
+        Password
+        <input type="password" name="password" />
+      </label> -->
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      const form = document.getElementById("form")
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault()
+        const formData = new FormData(form)
+        const data = Object.fromEntries(formData)
+        console.log(data)
+        const resp = await fetch("/api/services", {
+          method: "POST",
+          body: JSON.stringify(data),
+        })
+        const json = await resp.json()
+
+        // go back to route page
+        window.location.href = "/"
+      })
+    </script>
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: 800px;
+    padding: 1rem;
+    margin: auto;
+  }
+</style>
