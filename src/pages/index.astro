@@ -14,14 +14,17 @@ import LocationIcon from "../components/LocationIcon.astro"
   background: linear-gradient(90deg, rgba(0,0,105,1) 0%, rgba(64,146,255,1) 100%);"
   >
     <div style="max-width: 1100px; margin: auto; display: flex;">
-      <a href="#about" style="display: block; padding: 1rem; color: #fff"
+      <a href="#about" class="navLink" style="display: block; color: #fff"
         >About</a
       >
-      <a href="#services" style="display: block; padding: 1rem; color: #fff"
+      <a href="#services" class="navLink" style="display: block; color: #fff"
         >Services</a
       >
-      <a href="#contact" style="display: block; padding: 1rem; color: #fff"
+      <a href="#contact" class="navLink" style="display: block; color: #fff"
         >Contact</a
+      >
+      <a href="#contact" class="navLink" style="display: block; color: #fff"
+        >Buy</a
       >
     </div>
   </nav>
@@ -160,6 +163,22 @@ import LocationIcon from "../components/LocationIcon.astro"
       </p>
     </div>
   </section>
+
+  <section>
+    <h2 style="text-align: center; margin-bottom: 2rem" id="buy">
+      Buy Service
+    </h2>
+    <div style="text-align: center">
+      <p>
+        <a href="https://buy.stripe.com/8wMaH6erD6c04RqeUU"
+          >Bin Service (1-2 Receptacles) One Time Service</a
+        >
+      </p>
+      <p>
+        <a href="https://buy.stripe.com/00gcPe97j6c0es0cMN"> Custom Service</a>
+      </p>
+    </div>
+  </section>
 </main>
 <footer
   style="text-align: center; display: flex; justify-content: center; gap: 1rem; margin-top: 2rem"
@@ -220,6 +239,10 @@ import LocationIcon from "../components/LocationIcon.astro"
     margin-bottom: 0;
   }
 
+  .navLink {
+    padding: 1rem;
+  }
+
   @media screen and (max-width: 600px) {
     body {
       font-size: large;
@@ -232,6 +255,11 @@ import LocationIcon from "../components/LocationIcon.astro"
 
     .innerItem {
       padding: 0.5rem;
+    }
+
+    .navLink {
+      padding: 0.75rem;
+      font-size: large;
     }
   }
 
@@ -284,5 +312,9 @@ import LocationIcon from "../components/LocationIcon.astro"
   h1,
   h2 {
     /* color: rgb(0, 0, 135); */
+  }
+
+  a {
+    color: rgb(0, 0, 105);
   }
 </style>
