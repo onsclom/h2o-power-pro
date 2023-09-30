@@ -11,208 +11,237 @@ import one from "../images/1.jpg"
 import two from "../images/2.jpg"
 import three from "../images/3.jpg"
 import four from "../images/4.jpg"
+import ImageTextCombo from "../components/ImageTextCombo.astro"
 ---
 
 <Layout title="H2O Power Pro">
-  <nav
-    style="position: sticky; top: 0; 
-    background-color: rgb(0,0,135); background: rgb(0,0,105);
-  background: linear-gradient(90deg, rgba(0,0,105,1) 0%, rgba(64,146,255,1) 100%);"
-  >
-    <div style="max-width: 1100px; margin: auto; display: flex;">
-      <a href="#about" class="navLink" style="display: block; color: #fff"
-        >About</a
-      >
-      <a href="#services" class="navLink" style="display: block; color: #fff"
-        >Services</a
-      >
-      <a href="#contact" class="navLink" style="display: block; color: #fff"
-        >Contact</a
-      >
-      <a href="#contact" class="navLink" style="display: block; color: #fff"
-        >Buy</a
-      >
-    </div>
-  </nav>
+  <main class="font-serif">
+    <nav class="w-full bg-gradient-to-tr from-indigo-900 to-blue-400">
+      <div class="flex max-w-screen-lg m-auto text-l sm:text-2xl">
+        <a href="#about" class="p-4 font-bold text-white hover:text-blue-200"
+          >About</a
+        >
+        <a href="#services" class="p-4 font-bold text-white hover:text-blue-200"
+          >Services</a
+        >
+        <a href="#contact" class="p-4 font-bold text-white hover:text-blue-200"
+          >Contact</a
+        >
+        <a href="#buy" class="p-4 font-bold text-white hover:text-blue-200"
+          >Buy</a
+        >
+      </div>
+    </nav>
+    <section>
+      <header>
+        <h1 class="text-5xl font-extrabold text-center pt-14 text-slate-900">
+          H2O Power Pro
+        </h1>
+        <p class="text-xl text-center text-slate-600">
+          <i>Restore Your Property's Beauty</i>
+        </p>
+        <p
+          class="flex items-center justify-center gap-1 text-xl text-center fill-slate-600 text-slate-600"
+        >
+          <LocationIcon height="1.25rem" /> Las Vegas Valley
+        </p>
+      </header>
+    </section>
 
-  <section style="">
-    <header style="text-align: center">
-      <h1 style="margin-bottom: .5rem">H2O Power Pro</h1>
-      <p style="margin-top: 0; margin-bottom: .5rem">
-        <i>Restore Your Property's Beauty</i>
-      </p>
-      <p
-        style="margin-top: 0; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: .3rem"
+    <section class="max-w-screen-lg px-3 m-auto md:px-6">
+      <h2
+        class="text-4xl font-bold text-center pt-14 text-slate-800"
+        id="about"
       >
-        <LocationIcon width="1rem" /> Las Vegas Valley
-      </p>
-    </header>
+        About us
+      </h2>
+
+      <ImageTextCombo>
+        <img
+          slot="image"
+          class="m-auto text-center"
+          src="/imgs/brickwall.webp"
+          alt="Washing brick wall"
+        />
+        <p
+          slot="text"
+          class="pt-2 m-auto text-lg sm:pt-0 max-w-prose sm:text-justify text-slate-900"
+        >
+          We are a Nevada born company serving Las Vegas, Henderson and the
+          surrounding valley. H2O Power Pro will meet all your residential and
+          commercial needs. We are committed to providing top-notch services
+          that not only cleans but protects your home or business from future
+          damage. We take pride in our work and strive for complete customer
+          satisfaction with every job we do. We are Nevada licensed and insured.
+        </p>
+      </ImageTextCombo>
+
+      <ImageTextCombo>
+        <img
+          slot="image"
+          class="m-auto text-center sm:order-2"
+          src="/imgs/truck.webp"
+          alt="Washing brick wall"
+        />
+        <p
+          slot="text"
+          class="pt-2 m-auto text-lg sm:pt-0 max-w-prose sm:text-justify text-slate-900"
+        >
+          H2O Power Pro invests in the latest state of the art equipment
+          featuring a 220-degree high pressure washer removing stubborn stains
+          using industry leading cleaning agents. We also offer soft washing
+          with Pure Water taking great care in treating your windows and solar
+          panels. In addition to all your cleaning needs we offer paver sealing
+          to enhance the durability, preventing weathering and stains while
+          maintaining a vibrant appearance.
+        </p>
+      </ImageTextCombo>
+    </section>
+  </main>
+
+  <section class="max-w-screen-lg px-3 m-auto md:px-6">
+    <h2
+      class="text-4xl font-bold text-center pt-14 text-slate-800"
+      id="services"
+    >
+      Services
+    </h2>
   </section>
+  <div class="imageTextContainer">
+    <img class="innerItem" src="/imgs/equipment.webp" alt="Company equipment" />
+    <ul class="innerItem">
+      <li>
+        <b>High Pressure Washing</b> at 220 degrees with a PSI of 3500 at 5 GPM.
+      </li>
+      <li>Hard surfaces, structures, walls and more.</li>
+      <li>Remove stains, graffiti and efflorescence.</li>
+      <li>
+        <b>Low Pressure Washing</b> using pure deionized spot free H2O.
+      </li>
+      <li>Window and screen cleaning</li>
+      <li>Solar Panels</li>
+      <li>Marine, RV and Auto</li>
+    </ul>
+  </div>
+  <ImageTextCombo>
+    <img
+      slot="image"
+      class="innerItem"
+      src="/imgs/equipment.webp"
+      alt="Company equipment"
+    />
+    <p
+      slot="text"
+      class="pt-2 m-auto text-lg sm:pt-0 max-w-prose sm:text-justify text-slate-900"
+    >
+      We are a Nevada born company serving Las Vegas, Henderson and the
+      surrounding valley. H2O Power Pro will meet all your residential and
+      commercial needs. We are committed to providing top-notch services that
+      not only cleans but protects your home or business from future damage. We
+      take pride in our work and strive for complete customer satisfaction with
+      every job we do. We are Nevada licensed and insured.
+    </p>
+  </ImageTextCombo>
+
+  <div class="imageTextContainer reverse">
+    <img class="innerItem" src="/imgs/bricks.webp" alt="Washing brick wall" />
+    <div class="innerItem">
+      <p><b>H2O Power Pro - Paver Cleaning and Sealing</b></p>
+      <p>
+        Paver sealing is a great option that offers immediate results enhancing
+        the beauty and character of your home producing a natural look or even a
+        high gloss finish. More importantly forming a protective barrier from
+        weather and staining.
+      </p>
+    </div>
+  </div>
+
+  <div class="imageTextContainer">
+    <img class="innerItem" src="/imgs/window.webp" alt="Window washing" />
+    <div class="innerItem">
+      <p><b>H2O Power Pro - Window Cleaning</b></p>
+      <p>
+        Our exterior window cleaning service provides amazing results using a
+        PURE SPOT FREE water fed pole. The soft brush does all the work leaving
+        a spot free shine. Our optional screen cleaning service will elevate the
+        appearance of your home. Contact us today for a free estimate.
+      </p>
+    </div>
+  </div>
+
+  <div class="imageTextContainer reverse">
+    <img class="innerItem" src="/imgs/solar.webp" alt="Washing solar" />
+    <div class="innerItem">
+      <p><b>H2O Power Pro - Solar Panel Cleaning</b></p>
+      <p>
+        Protect your investment and maximize the efficiency of your system. We
+        do not use any chemicals that could potentially harm your solar panel
+        system. We truly rely on the PURE SPOT FREE WATER method to ensure your
+        system is protected and cleaned.
+      </p>
+    </div>
+  </div>
 </Layout>
 
-<main>
-  <section>
-    <h2 style="text-align: center; margin-top: 0" id="about">About us</h2>
-    <div class="imageTextContainer">
-      <img
-        class="innerItem"
-        src="/imgs/brickwall.webp"
-        alt="Washing brick wall"
-      />
-      <p class="innerItem">
-        We are a Nevada born company serving Las Vegas, Henderson and the
-        surrounding valley. H2O Power Pro will meet all your residential and
-        commercial needs. We are committed to providing top-notch services that
-        not only cleans but protects your home or business from future damage.
-        We take pride in our work and strive for complete customer satisfaction
-        with every job we do. We are Nevada licensed and insured.
-      </p>
-    </div>
-
-    <div class="imageTextContainer reverse">
-      <img class="innerItem" src="/imgs/truck.webp" alt="Washing brick wall" />
-      <p class="innerItem">
-        H2O Power Pro invests in the latest state of the art equipment featuring
-        a 220-degree high pressure washer removing stubborn stains using
-        industry leading cleaning agents. We also offer soft washing with Pure
-        Water taking great care in treating your windows and solar panels. In
-        addition to all your cleaning needs we offer paver sealing to enhance
-        the durability, preventing weathering and stains while maintaining a
-        vibrant appearance.
-      </p>
-    </div>
-  </section>
-
-  <section>
-    <h2 style="text-align: center" id="services">Services</h2>
-    <div class="imageTextContainer">
-      <img
-        class="innerItem"
-        src="/imgs/equipment.webp"
-        alt="Company equipment"
-      />
-      <ul class="innerItem">
-        <li>
-          <b>High Pressure Washing</b> at 220 degrees with a PSI of 3500 at 5
-          GPM.
-        </li>
-        <li>Hard surfaces, structures, walls and more.</li>
-        <li>Remove stains, graffiti and efflorescence.</li>
-        <li>
-          <b>Low Pressure Washing</b> using pure deionized spot free H2O.
-        </li>
-        <li>Window and screen cleaning</li>
-        <li>Solar Panels</li>
-        <li>Marine, RV and Auto</li>
-      </ul>
-    </div>
-
-    <div class="imageTextContainer reverse">
-      <img class="innerItem" src="/imgs/bricks.webp" alt="Washing brick wall" />
-      <div class="innerItem">
-        <p><b>H2O Power Pro - Paver Cleaning and Sealing</b></p>
-        <p>
-          Paver sealing is a great option that offers immediate results
-          enhancing the beauty and character of your home producing a natural
-          look or even a high gloss finish. More importantly forming a
-          protective barrier from weather and staining.
-        </p>
-      </div>
-    </div>
-
-    <div class="imageTextContainer">
-      <img class="innerItem" src="/imgs/window.webp" alt="Window washing" />
-      <div class="innerItem">
-        <p><b>H2O Power Pro - Window Cleaning</b></p>
-        <p>
-          Our exterior window cleaning service provides amazing results using a
-          PURE SPOT FREE water fed pole. The soft brush does all the work
-          leaving a spot free shine. Our optional screen cleaning service will
-          elevate the appearance of your home. Contact us today for a free
-          estimate.
-        </p>
-      </div>
-    </div>
-
-    <div class="imageTextContainer reverse">
-      <img class="innerItem" src="/imgs/solar.webp" alt="Washing solar" />
-      <div class="innerItem">
-        <p><b>H2O Power Pro - Solar Panel Cleaning</b></p>
-        <p>
-          Protect your investment and maximize the efficiency of your system. We
-          do not use any chemicals that could potentially harm your solar panel
-          system. We truly rely on the PURE SPOT FREE WATER method to ensure
-          your system is protected and cleaned.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2 style="text-align: center; margin-bottom: 2rem" id="gallery">
-      Gallery
-    </h2>
-    <div
-      style="display: grid; grid-template-columns: repeat(2, 1fr); 
+<section>
+  <h2 style="text-align: center; margin-bottom: 2rem" id="gallery">Gallery</h2>
+  <div
+    style="display: grid; grid-template-columns: repeat(2, 1fr); 
       grid-template-rows: repeat(2, 1fr); 
       gap: .5rem;
       width: 100%; 
       aspect-ratio: 1/1;"
-    >
-      <Image src={three} alt="H2O Power Pro gear" />
-      <Image src={four} alt="Window screen washing" />
-      <Image src={one} alt="Window washing first floor" />
-      <Image src={two} alt="Window washing second floor" />
-    </div>
-  </section>
+  >
+    <Image src={three} alt="H2O Power Pro gear" />
+    <Image src={four} alt="Window screen washing" />
+    <Image src={one} alt="Window washing first floor" />
+    <Image src={two} alt="Window washing second floor" />
+  </div>
+</section>
 
-  <section>
-    <h2
-      style="
+<section>
+  <h2
+    style="
         text-align:
         center;
         margin-bottom:
         2rem"
-      id="contact"
-    >
-      Contact us
-    </h2>
-    <div style="text-align: center">
-      <p>
-        📧
-        <a
-          href="mailto:owner@H2OPowerPro.com"
-          style="font-weight: 500; color: rgb(0, 0, 135)"
-          >owner@H2OPowerPro.com</a
-        >
-      </p>
-      <p>
-        📞
-        <a href="tel:702-303-9006" style="color: rgb(0, 0, 135)">
-          702-303-9006</a
-        >
-      </p>
-    </div>
-  </section>
+    id="contact"
+  >
+    Contact us
+  </h2>
+  <div style="text-align: center">
+    <p>
+      📧
+      <a
+        href="mailto:owner@H2OPowerPro.com"
+        style="font-weight: 500; color: rgb(0, 0, 135)">owner@H2OPowerPro.com</a
+      >
+    </p>
+    <p>
+      📞
+      <a href="tel:702-303-9006" style="color: rgb(0, 0, 135)"> 702-303-9006</a>
+    </p>
+  </div>
+</section>
 
-  <section>
-    <h2 style="text-align: center; margin-bottom: 2rem" id="buy">
-      Purchase Services
-    </h2>
-    <div style="text-align: center">
-      <p>
-        <b>Bin Service</b><br />
-        <a href="https://buy.stripe.com/7sIeXm3MZeIwabK7sw">Monthly</a>
-         or
-        <a href="https://buy.stripe.com/8wMaH6erD6c04RqeUU">One Time</a>
-      </p>
-      <p></p>
-      <p>
-        <a href="https://buy.stripe.com/00gcPe97j6c0es0cMN"> Custom Service</a>
-      </p>
-    </div>
-  </section>
-</main>
+<section>
+  <h2 style="text-align: center; margin-bottom: 2rem" id="buy">
+    Purchase Services
+  </h2>
+  <div style="text-align: center">
+    <p>
+      <b>Bin Service</b><br />
+      <a href="https://buy.stripe.com/7sIeXm3MZeIwabK7sw">Monthly</a>
+       or
+      <a href="https://buy.stripe.com/8wMaH6erD6c04RqeUU">One Time</a>
+    </p>
+    <p></p>
+    <p>
+      <a href="https://buy.stripe.com/00gcPe97j6c0es0cMN"> Custom Service</a>
+    </p>
+  </div>
+</section>
 <footer
   style="text-align: center; display: flex; justify-content: center; gap: 1rem; margin-top: 2rem"
 >
@@ -235,119 +264,3 @@ import four from "../images/4.jpg"
     <InstagramIcon />
   </a>
 </footer>
-
-<style>
-  body {
-    text-align: justify;
-  }
-
-  h1 {
-    /* font-size: 32px; */
-
-    color: #111;
-
-    font-size: 4rem;
-  }
-
-  .imageTextContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .innerItem {
-    box-sizing: border-box;
-    width: 50%;
-    padding: 1rem;
-  }
-
-  .reverse {
-    flex-direction: row-reverse;
-  }
-
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 0;
-  }
-
-  .navLink {
-    padding: 1rem;
-  }
-
-  @media screen and (max-width: 600px) {
-    body {
-      font-size: large;
-      text-align: start;
-    }
-
-    h1 {
-      font-size: 2.25rem;
-    }
-
-    .innerItem {
-      padding: 0.5rem;
-    }
-
-    .navLink {
-      padding: 0.75rem;
-      font-size: large;
-    }
-  }
-
-  @media screen and (max-width: 800px) {
-    .imageTextContainer {
-      flex-direction: column;
-    }
-
-    .innerItem {
-      width: 100%;
-    }
-
-    h2 {
-      margin-bottom: 1rem;
-    }
-  }
-
-  main {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  section {
-    padding: 0;
-    margin: 0;
-    padding: 1rem;
-  }
-
-  header {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  img {
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
-  }
-
-  a {
-    text-decoration: none;
-    color: black;
-    transition: all 0.2s ease-in-out;
-    font-weight: bold;
-  }
-
-  a:hover {
-    scale: 1.1;
-  }
-
-  h1,
-  h2 {
-    /* color: rgb(0, 0, 135); */
-  }
-
-  a {
-    color: rgb(0, 0, 105);
-  }
-</style>
