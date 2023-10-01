@@ -1,128 +1,40 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import FacebookIcon from "../components/icons/FacebookIcon.astro"
-import GoogleIcon from "../components/icons/GoogleIcon.astro"
-import YelpIcon from "../components/YelpIcon.astro"
-import InstagramIcon from "../components/icons/InstagramIcon.astro"
-import LocationIcon from "../components/icons/LocationIcon.astro"
-import YoutubeIcon from "../components/icons/YoutubeIcon.astro"
 
-import AboutUs from "../components/sections/AboutUs.astro"
-import Services from "../components/sections/Services.astro"
-import MainSection from "../components/sections/MainSection.astro"
-import Header2 from "../components/Header2.astro"
-import Link from "../components/Link.astro"
-import PhoneIcon from "../components/icons/PhoneIcon.astro"
-import MailIcon from "../components/icons/MailIcon.astro"
+import MainSection from "../components/MainSection.astro"
+import ImageTextCombo from "../components/ImageTextCombo.astro"
+import ImageText from "../components/ImageText.astro"
+import BasicImage from "../components/BasicImage.astro"
+
+import brickWall from "../images/brickwall.webp"
+import truck from "../images/truck.webp"
 ---
 
 <Layout title="H2O Power Pro">
-  <main class="font-serif">
-    <nav class="w-full bg-indigo-900">
-      <div class="flex max-w-screen-lg m-auto text-l sm:text-2xl">
-        <a href="#about" class="p-4 text-white hover:bg-slate-900">About</a>
-        <a href="#services" class="p-4 text-white hover:bg-slate-900"
-          >Services</a
-        >
-        <a href="#buy" class="p-4 text-white hover:bg-slate-900">Buy</a>
-      </div>
-    </nav>
-    <header>
-      <h1 class="text-5xl font-extrabold text-center pt-14 text-slate-900">
-        H2O Power Pro
-      </h1>
-      <p class="text-xl text-center text-slate-600">
-        <i>Restore Your Property's Beauty</i>
-      </p>
-      <p
-        class="flex items-center justify-center gap-1 text-xl text-center fill-slate-600 text-slate-600"
-      >
-        <LocationIcon /> Las Vegas Valley
-      </p>
-      <div class="pt-5 text-xl text-center">
-        <div class="flex flex-wrap items-center justify-center gap-2">
-          <p class="flex items-center justify-center gap-2">
-            <PhoneIcon />
-            <Link href="tel:702-303-9006">702-303-9006</Link>
-          </p>
-          <p class="flex items-center justify-center gap-2">
-            <MailIcon />
-            <Link href="mailto:owner@H2OPowerPro.com">
-              owner@H2OPowerPro.com
-            </Link>
-          </p>
-        </div>
-      </div>
-    </header>
+  <MainSection>
+    <ImageTextCombo>
+      <BasicImage slot="image" src={brickWall} alt="Washing brick wall" />
+      <ImageText slot="text">
+        We are a Nevada born company serving Las Vegas, Henderson and the
+        surrounding valley. H2O Power Pro will meet all your residential and
+        commercial needs. We are committed to providing top-notch services that
+        not only cleans but protects your home or business from future damage.
+        We take pride in our work and strive for complete customer satisfaction
+        with every job we do. We are Nevada licensed and insured.
+      </ImageText>
+    </ImageTextCombo>
 
-    <AboutUs />
-    <Services />
-
-    <!-- <section>
-      <h2 style="text-align: center; margin-bottom: 2rem" id="gallery">
-        Gallery
-      </h2>
-      <div
-        style="display: grid; grid-template-columns: repeat(2, 1fr); 
-      grid-template-rows: repeat(2, 1fr); 
-      gap: .5rem;
-      width: 100%; 
-      aspect-ratio: 1/1;"
-      >
-        <Image src={three} alt="H2O Power Pro gear" />
-        <Image src={four} alt="Window screen washing" />
-        <Image src={one} alt="Window washing first floor" />
-        <Image src={two} alt="Window washing second floor" />
-      </div>
-    </section> -->
-
-    <MainSection>
-      <Header2 id="buy">Purchase Services</Header2>
-      <div class="pt-5 text-lg text-center">
-        <p>
-          <b>Trash Bin Service</b><br />
-          <Link href="https://buy.stripe.com/7sIeXm3MZeIwabK7sw">Monthly</Link>
-           &bull;
-          <Link href="https://buy.stripe.com/4gw02s83f6c0bfO8wC">One Time</Link>
-           &bull;
-          <Link href="https://buy.stripe.com/5kA02s3MZdEs83C9AF">
-            Heritage Special
-          </Link>
-        </p>
-        <p></p>
-        <p class="pt-5">
-          <Link href="https://buy.stripe.com/00gcPe97j6c0es0cMN">
-            All Other Services
-          </Link>
-        </p>
-      </div>
-    </MainSection>
-
-    <footer class="flex justify-center gap-4 pb-5 text-center pt-14">
-      <a
-        href="https://www.facebook.com/people/H2O-Power-Pro/61551053690915"
-        aria-label="Facebook"
-      >
-        <FacebookIcon />
-      </a>
-      <a
-        href="https://www.google.com/maps/place/H2O+Power+Pro/@36.136222,-115.1574945,10z/data=!4m6!3m5!1s0x850844fd0a88fe33:0xe74f1b9b56a7ff69!8m2!3d36.136222!4d-115.1574945!16s%2Fg%2F11vb1gldw_?entry=ttu"
-        aria-label="Google Maps"
-      >
-        <GoogleIcon />
-      </a>
-      <a
-        href="https://www.yelp.com/biz/h2o-power-pro-henderson"
-        aria-label="Yelp"
-      >
-        <YelpIcon />
-      </a>
-      <a href="https://www.instagram.com/h2opowerpro/" aria-label="Instagram">
-        <InstagramIcon />
-      </a>
-      <a href="https://www.youtube.com/@H2OPowerPro" aria-label="YouTube">
-        <YoutubeIcon />
-      </a>
-    </footer>
-  </main>
+    <ImageTextCombo>
+      <BasicImage reverse={true} slot="image" src={truck} alt="Company truck" />
+      <ImageText slot="text">
+        H2O Power Pro invests in the latest state of the art equipment featuring
+        a 220-degree high pressure washer removing stubborn stains using
+        industry leading cleaning agents. We also offer soft washing with Pure
+        Water taking great care in treating your windows and solar panels. In
+        addition to all your cleaning needs we offer paver sealing to enhance
+        the durability, preventing weathering and stains while maintaining a
+        vibrant appearance.
+      </ImageText>
+    </ImageTextCombo>
+  </MainSection>
 </Layout>

@@ -4,18 +4,16 @@ import BasicImage from "../BasicImage.astro"
 import ImageTextCombo from "../ImageTextCombo.astro"
 import ImageText from "../ImageText.astro"
 import Link from "../Link.astro"
-import MainSection from "./MainSection.astro"
+import MainSection from "../MainSection.astro"
 
 import equipment from "./equipment.webp"
 import bricks from "./bricks.webp"
 import window from "./window.webp"
 import solar from "./solar.webp"
 import binservice from "./binservice.jpg"
-import Header2 from "../Header2.astro"
 ---
 
 <MainSection>
-  <Header2 id="services">Services</Header2>
   <ImageTextCombo>
     <BasicImage slot="image" src={equipment} alt="Company equipment" />
     <ImageText slot="text">
@@ -89,7 +87,7 @@ import Header2 from "../Header2.astro"
         and bacteria while providing quick and convenient curbside service.
         Simply leave your empty bins out at the curb, and we will handle the
         rest! Set up a one time or subscription service by clicking <Link
-          href="#buy"
+          href="/purchase"
         >
           here
         </Link>.
