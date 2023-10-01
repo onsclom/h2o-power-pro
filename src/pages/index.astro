@@ -12,17 +12,18 @@ import Services from "../components/sections/Services.astro"
 import MainSection from "../components/sections/MainSection.astro"
 import Header2 from "../components/Header2.astro"
 import Link from "../components/Link.astro"
+import PhoneIcon from "../components/icons/PhoneIcon.astro"
+import MailIcon from "../components/icons/MailIcon.astro"
 ---
 
 <Layout title="H2O Power Pro">
   <main class="font-serif">
-    <nav class="w-full bg-indigo-900 bg-gradient-to-tr">
+    <nav class="w-full bg-indigo-900">
       <div class="flex max-w-screen-lg m-auto text-l sm:text-2xl">
         <a href="#about" class="p-4 text-white hover:bg-slate-900">About</a>
         <a href="#services" class="p-4 text-white hover:bg-slate-900"
           >Services</a
         >
-        <a href="#contact" class="p-4 text-white hover:bg-slate-900">Contact</a>
         <a href="#buy" class="p-4 text-white hover:bg-slate-900">Buy</a>
       </div>
     </nav>
@@ -36,8 +37,22 @@ import Link from "../components/Link.astro"
       <p
         class="flex items-center justify-center gap-1 text-xl text-center fill-slate-600 text-slate-600"
       >
-        <LocationIcon height="1.25rem" /> Las Vegas Valley
+        <LocationIcon /> Las Vegas Valley
       </p>
+      <div class="pt-5 text-xl text-center">
+        <div class="flex flex-wrap items-center justify-center gap-2">
+          <p class="flex items-center justify-center gap-2">
+            <PhoneIcon />
+            <Link href="tel:702-303-9006">702-303-9006</Link>
+          </p>
+          <p class="flex items-center justify-center gap-2">
+            <MailIcon />
+            <Link href="mailto:owner@H2OPowerPro.com">
+              owner@H2OPowerPro.com
+            </Link>
+          </p>
+        </div>
+      </div>
     </header>
 
     <AboutUs />
@@ -60,20 +75,6 @@ import Link from "../components/Link.astro"
         <Image src={two} alt="Window washing second floor" />
       </div>
     </section> -->
-
-    <MainSection>
-      <Header2 id="contact">Contact us</Header2>
-      <div class="pt-5 text-xl text-center">
-        <p>
-          📧
-          <Link href="mailto:owner@H2OPowerPro.com">owner@H2OPowerPro.com</Link>
-        </p>
-        <p class="pt-5">
-          📞
-          <Link href="tel:702-303-9006">702-303-9006</Link>
-        </p>
-      </div>
-    </MainSection>
 
     <MainSection>
       <Header2 id="buy">Purchase Services</Header2>
