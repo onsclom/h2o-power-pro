@@ -11,6 +11,7 @@ import one from "../images/1.jpg"
 import two from "../images/2.jpg"
 import three from "../images/3.jpg"
 import four from "../images/4.jpg"
+import binService from "../images/BinService.jpg"
 ---
 
 <Layout title="H2O Power Pro">
@@ -29,9 +30,7 @@ import four from "../images/4.jpg"
       <a href="#contact" class="navLink" style="display: block; color: #fff"
         >Contact</a
       >
-      <a href="#contact" class="navLink" style="display: block; color: #fff"
-        >Buy</a
-      >
+      <a href="#buy" class="navLink" style="display: block; color: #fff">Buy</a>
     </div>
   </nav>
 
@@ -148,10 +147,16 @@ import four from "../images/4.jpg"
     </div>
 
     <div class="imageTextContainer">
-      <img class="innerItem" src="/imgs/solar.webp" alt="Washing solar" />
+      <Image class="innerItem" src={binService} alt="Bin service" />
       <div class="innerItem">
         <p><b>Bin Service</b></p>
-        <p></p>
+        <p>
+          Dirty Bins Stink! But they don’t have to! Let us handle this dirty job
+          for you! We provide curbside garbage can & recycle bin cleaning
+          services right at your home. Simply leave your empty bins out at the
+          curb, and we will handle the rest! Click <a href="#buy">here</a> to
+          pay in advance or pay at time of service.
+        </p>
       </div>
     </div>
   </section>
@@ -212,7 +217,11 @@ import four from "../images/4.jpg"
         <b>Bin Service</b><br />
         <a href="https://buy.stripe.com/7sIeXm3MZeIwabK7sw">Monthly</a>
          or
-        <a href="https://buy.stripe.com/8wMaH6erD6c04RqeUU">One Time</a>
+        <a href="https://buy.stripe.com/4gw02s83f6c0bfO8wC">One Time</a>
+         or
+        <a href="https://buy.stripe.com/5kA02s3MZdEs83C9AF"
+          >Heritage (Limited Time Special)</a
+        >
       </p>
       <p></p>
       <p>
@@ -250,10 +259,7 @@ import four from "../images/4.jpg"
   }
 
   h1 {
-    /* font-size: 32px; */
-
     color: #111;
-
     font-size: 4rem;
   }
 
@@ -341,7 +347,7 @@ import four from "../images/4.jpg"
 
   a {
     text-decoration: none;
-    color: black;
+    color: rgb(0, 0, 135);
     transition: all 0.2s ease-in-out;
     font-weight: bold;
   }
