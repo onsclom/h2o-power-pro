@@ -1,18 +1,16 @@
 ---
-import { Image } from "astro:assets"
-
 import ImageTextCombo from "../ImageTextCombo.astro"
 import ImageText from "../ImageText.astro"
 import BasicImage from "../BasicImage.astro"
+import MainSection from "./MainSection.astro"
 
 import brickWall from "./brickwall.webp"
 import truck from "./truck.webp"
+import Header2 from "../Header2.astro"
 ---
 
-<section class="max-w-screen-lg px-3 m-auto md:px-6">
-  <h2 class="text-4xl font-bold text-center pt-14 text-slate-800" id="about">
-    About us
-  </h2>
+<MainSection>
+  <Header2 id="about">About us</Header2>
   <ImageTextCombo>
     <BasicImage slot="image" src={brickWall} alt="Washing brick wall" />
     <ImageText slot="text">
@@ -36,4 +34,4 @@ import truck from "./truck.webp"
       preventing weathering and stains while maintaining a vibrant appearance.
     </ImageText>
   </ImageTextCombo>
-</section>
+</MainSection>

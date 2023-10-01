@@ -3,23 +3,26 @@ import BasicImage from "../BasicImage.astro"
 
 import ImageTextCombo from "../ImageTextCombo.astro"
 import ImageText from "../ImageText.astro"
+import Link from "../Link.astro"
+import MainSection from "./MainSection.astro"
 
 import equipment from "./equipment.webp"
 import bricks from "./bricks.webp"
 import window from "./window.webp"
 import solar from "./solar.webp"
+import binservice from "./binservice.jpg"
+import Header2 from "../Header2.astro"
 ---
 
-<section class="max-w-screen-lg px-3 m-auto md:px-6">
-  <h2 class="text-4xl font-bold text-center pt-14 text-slate-800" id="services">
-    Services
-  </h2>
+<MainSection>
+  <Header2 id="services">Services</Header2>
   <ImageTextCombo>
     <BasicImage slot="image" src={equipment} alt="Company equipment" />
     <ImageText slot="text">
       <ul class="list-disc list-inside">
         <li>
-          <b>High Pressure Washing</b> at 220 degrees with a PSI of 3500 at 5 GPM.
+          <b>High Pressure Washing</b> at 220 degrees with a PSI of 3500 at 5
+          GPM.
         </li>
         <li>Hard surfaces, structures, walls and more.</li>
         <li>Remove stains, graffiti and efflorescence.</li>
@@ -34,7 +37,12 @@ import solar from "./solar.webp"
   </ImageTextCombo>
 
   <ImageTextCombo>
-    <BasicImage slot="image" reverse={true} src={bricks} alt="Pavers before and after" />
+    <BasicImage
+      slot="image"
+      reverse={true}
+      src={bricks}
+      alt="Pavers before and after"
+    />
     <ImageText slot="text">
       <p><b>H2O Power Pro - Paver Cleaning and Sealing</b></p>
       <p>
@@ -58,7 +66,7 @@ import solar from "./solar.webp"
       </p>
     </ImageText>
   </ImageTextCombo>
-  
+
   <ImageTextCombo>
     <BasicImage slot="image" reverse={true} src={solar} alt="Washing solar" />
     <ImageText slot="text">
@@ -71,4 +79,21 @@ import solar from "./solar.webp"
       </p>
     </ImageText>
   </ImageTextCombo>
-</section>
+
+  <ImageTextCombo>
+    <BasicImage slot="image" src={binservice} alt="Trash bin service" />
+    <ImageText slot="text">
+      <p><b>H2O Power Pro - Trash Bin Service</b></p>
+      <p>
+        Dirty Bins Stink! Let us handle this dirty job for you, eliminating odor
+        and bacteria while providing quick and convenient curbside service.
+        Simply leave your empty bins out at the curb, and we will handle the
+        rest! Set up a one time or subscription service by clicking <Link
+          href="#buy"
+        >
+          here
+        </Link>.
+      </p>
+    </ImageText>
+  </ImageTextCombo>
+</MainSection>

@@ -5,27 +5,25 @@ import GoogleIcon from "../components/icons/GoogleIcon.astro"
 import YelpIcon from "../components/YelpIcon.astro"
 import InstagramIcon from "../components/icons/InstagramIcon.astro"
 import LocationIcon from "../components/icons/LocationIcon.astro"
-import { Image } from "astro:assets"
+import YoutubeIcon from "../components/icons/YoutubeIcon.astro"
 
-import one from "../images/1.jpg"
-import two from "../images/2.jpg"
-import three from "../images/3.jpg"
-import four from "../images/4.jpg"
 import AboutUs from "../components/sections/AboutUs.astro"
 import Services from "../components/sections/Services.astro"
+import MainSection from "../components/sections/MainSection.astro"
+import Header2 from "../components/Header2.astro"
+import Link from "../components/Link.astro"
 ---
 
 <Layout title="H2O Power Pro">
   <main class="font-serif">
-    <nav class="w-full bg-gradient-to-tr from-indigo-900 to-blue-400">
+    <nav class="w-full bg-indigo-900 bg-gradient-to-tr">
       <div class="flex max-w-screen-lg m-auto text-l sm:text-2xl">
-        <a href="#about" class="p-4 text-white hover:text-blue-200">About</a>
-        <a href="#services" class="p-4 text-white hover:text-blue-200"
+        <a href="#about" class="p-4 text-white hover:bg-slate-900">About</a>
+        <a href="#services" class="p-4 text-white hover:bg-slate-900"
           >Services</a
         >
-        <a href="#contact" class="p-4 text-white hover:text-blue-200">Contact</a
-        >
-        <a href="#buy" class="p-4 text-white hover:text-blue-200">Buy</a>
+        <a href="#contact" class="p-4 text-white hover:bg-slate-900">Contact</a>
+        <a href="#buy" class="p-4 text-white hover:bg-slate-900">Buy</a>
       </div>
     </nav>
     <header>
@@ -45,7 +43,7 @@ import Services from "../components/sections/Services.astro"
     <AboutUs />
     <Services />
 
-    <section>
+    <!-- <section>
       <h2 style="text-align: center; margin-bottom: 2rem" id="gallery">
         Gallery
       </h2>
@@ -61,59 +59,45 @@ import Services from "../components/sections/Services.astro"
         <Image src={one} alt="Window washing first floor" />
         <Image src={two} alt="Window washing second floor" />
       </div>
-    </section>
+    </section> -->
 
-    <section>
-      <h2
-        style="
-        text-align:
-        center;
-        margin-bottom:
-        2rem"
-        id="contact"
-      >
-        Contact us
-      </h2>
-      <div style="text-align: center">
+    <MainSection>
+      <Header2 id="contact">Contact us</Header2>
+      <div class="pt-5 text-xl text-center">
         <p>
           📧
-          <a
-            href="mailto:owner@H2OPowerPro.com"
-            style="font-weight: 500; color: rgb(0, 0, 135)"
-            >owner@H2OPowerPro.com</a
-          >
+          <Link href="mailto:owner@H2OPowerPro.com">owner@H2OPowerPro.com</Link>
         </p>
-        <p>
+        <p class="pt-5">
           📞
-          <a href="tel:702-303-9006" style="color: rgb(0, 0, 135)">
-            702-303-9006</a
-          >
+          <Link href="tel:702-303-9006">702-303-9006</Link>
         </p>
       </div>
-    </section>
+    </MainSection>
 
-    <section>
-      <h2 style="text-align: center; margin-bottom: 2rem" id="buy">
-        Purchase Services
-      </h2>
-      <div style="text-align: center">
+    <MainSection>
+      <Header2 id="buy">Purchase Services</Header2>
+      <div class="pt-5 text-lg text-center">
         <p>
-          <b>Bin Service</b><br />
-          <a href="https://buy.stripe.com/7sIeXm3MZeIwabK7sw">Monthly</a>
-           or
-          <a href="https://buy.stripe.com/8wMaH6erD6c04RqeUU">One Time</a>
+          <b>Trash Bin Service</b><br />
+          <Link href="https://buy.stripe.com/7sIeXm3MZeIwabK7sw">Monthly</Link>
+           &bull;
+          <Link href="https://buy.stripe.com/4gw02s83f6c0bfO8wC">One Time</Link>
+           &bull;
+          <Link href="https://buy.stripe.com/5kA02s3MZdEs83C9AF">
+            Heritage Special
+          </Link>
         </p>
         <p></p>
-        <p>
-          <a href="https://buy.stripe.com/00gcPe97j6c0es0cMN">
-            Custom Service</a
-          >
+        <p class="pt-5">
+          <Link href="https://buy.stripe.com/00gcPe97j6c0es0cMN">
+            All Other Services
+          </Link>
         </p>
       </div>
-    </section>
-    <footer
-      style="text-align: center; display: flex; justify-content: center; gap: 1rem; margin-top: 2rem"
-    >
+    </MainSection>
+
+    <footer class="flex justify-center gap-4 pb-5 text-center pt-14">
       <a
         href="https://www.facebook.com/people/H2O-Power-Pro/61551053690915"
         aria-label="Facebook"
@@ -134,6 +118,9 @@ import Services from "../components/sections/Services.astro"
       </a>
       <a href="https://www.instagram.com/h2opowerpro/" aria-label="Instagram">
         <InstagramIcon />
+      </a>
+      <a href="https://www.youtube.com/@H2OPowerPro" aria-label="YouTube">
+        <YoutubeIcon />
       </a>
     </footer>
   </main>
