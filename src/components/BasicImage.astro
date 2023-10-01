@@ -1,0 +1,13 @@
+---
+import { Image } from "astro:assets"
+
+type Props = {
+  src: ImageMetadata
+  alt: string
+  reverse?: boolean
+}
+
+const { src, alt, reverse } = Astro.props
+---
+
+<Image class={`m-auto shadow-xl ${reverse ? "order-1" : ""}`} src={src} alt={alt} />

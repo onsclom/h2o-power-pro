@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets"
+
+import ImageTextCombo from "../ImageTextCombo.astro"
+import ImageText from "../ImageText.astro"
+import BasicImage from "../BasicImage.astro"
+
+import brickWall from "./brickwall.webp"
+import truck from "./truck.webp"
+---
+
+<section class="max-w-screen-lg px-3 m-auto md:px-6">
+  <h2 class="text-4xl font-bold text-center pt-14 text-slate-800" id="about">
+    About us
+  </h2>
+  <ImageTextCombo>
+    <BasicImage slot="image" src={brickWall} alt="Washing brick wall" />
+    <ImageText slot="text">
+      We are a Nevada born company serving Las Vegas, Henderson and the
+      surrounding valley. H2O Power Pro will meet all your residential and
+      commercial needs. We are committed to providing top-notch services that
+      not only cleans but protects your home or business from future damage. We
+      take pride in our work and strive for complete customer satisfaction with
+      every job we do. We are Nevada licensed and insured.
+    </ImageText>
+  </ImageTextCombo>
+
+  <ImageTextCombo>
+    <BasicImage reverse={true} slot="image" src={truck} alt="Company truck" />
+    <ImageText slot="text">
+      H2O Power Pro invests in the latest state of the art equipment featuring a
+      220-degree high pressure washer removing stubborn stains using industry
+      leading cleaning agents. We also offer soft washing with Pure Water taking
+      great care in treating your windows and solar panels. In addition to all
+      your cleaning needs we offer paver sealing to enhance the durability,
+      preventing weathering and stains while maintaining a vibrant appearance.
+    </ImageText>
+  </ImageTextCombo>
+</section>
