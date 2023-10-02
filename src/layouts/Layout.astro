@@ -37,31 +37,23 @@ const { title } = Astro.props
   <body class="antialiased text-slate-600">
     <main class="font-serif">
       <header
-        class="pt-10 pb-5 mb-2 text-gray-100 bg-blue-900"
+        class="pb-5 mb-2 text-gray-200 bg-blue-900 pt-7"
         transition:persist
       >
-        <h1 class="text-5xl font-extrabold text-center text-white">
+        <h1 class="py-4 text-5xl font-extrabold text-center text-white">
           H2O Power Pro
         </h1>
-        <p class="text-xl text-center">
-          <i>Restore Your Property's Beauty</i>
-        </p>
-        <p class="flex items-center justify-center gap-1 text-xl text-center">
-          <LocationIcon /> Las Vegas Valley
-        </p>
-        <div
-          class="pt-5 text-xl text-center sm:flex sm:gap-4 sm:justify-center"
-        >
-          <p class="flex items-center justify-center gap-2">
+        <div class="text-xl text-center sm:flex sm:gap-4 sm:justify-center">
+          <p class="flex items-center justify-center">
             <PhoneIcon />
-            <a class="text-white hover:underline" href="tel:702-303-9006">
+            <a class="p-3 text-xl hover:underline" href="tel:702-303-9006">
               702-303-9006
             </a>
           </p>
-          <p class="flex items-center justify-center gap-2">
+          <p class="flex items-center justify-center">
             <MailIcon />
             <a
-              class="text-white hover:underline"
+              class="p-3 text-xl hover:underline"
               href="mailto:owner@H2OPowerPro.com"
             >
               owner@H2OPowerPro.com
@@ -70,7 +62,7 @@ const { title } = Astro.props
         </div>
 
         <div>
-          <nav class="flex justify-center pt-5 text-lg text-white sm:text-xl">
+          <nav class="flex justify-center text-lg text-white sm:text-xl">
             <a class="p-4 hover:bg-slate-950" href="/">Home</a>
             <a class="p-4 hover:bg-slate-950" href="/services">Services</a>
             <a class="p-4 hover:bg-slate-950" href="/gallery">Gallery</a>
