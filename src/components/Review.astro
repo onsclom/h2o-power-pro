@@ -1,0 +1,25 @@
+---
+type Props = {
+  name: string
+}
+
+const { name } = Astro.props
+
+import StarIcon from "./icons/StarIcon.astro"
+---
+
+<div class="max-w-sm p-3 m-4 border-2 shadow-sm">
+  <div class="flex">
+    <p class="mr-1 font-bold">{name}</p>
+    <div class="flex ml-2 text-yellow-400">
+      <StarIcon />
+      <StarIcon />
+      <StarIcon />
+      <StarIcon />
+      <StarIcon />
+    </div>
+  </div>
+  <p class="text-justify">
+    <slot />
+  </p>
+</div>
