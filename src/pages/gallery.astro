@@ -2,10 +2,16 @@
 import Layout from "../layouts/Layout.astro"
 import { Image } from "astro:assets"
 
-import one from "../images/1.jpg"
-import two from "../images/2.jpg"
-import three from "../images/3.jpg"
-import four from "../images/4.jpg"
+// import one from "../images/1.jpg"
+// import two from "../images/2.jpg"
+// import three from "../images/3.jpg"
+// import four from "../images/4.jpg"
+
+import e from "../images/SQEquipment.jpg"
+import w from "../images/SQWindow.jpg"
+import s from "../images/SQScreen.jpg"
+import t from "../images/SQTruck.jpg"
+
 import MainSection from "../components/MainSection.astro"
 ---
 
@@ -19,13 +25,51 @@ import MainSection from "../components/MainSection.astro"
       width: 100%; 
       aspect-ratio: 1/1;"
     >
-      <Image src={three} width={650} alt="H2O Power Pro gear" />
+      <Image src={e} width={650} alt="H2O Power Pro gear" />
       <!-- switch these ones -->
-      <Image src={four} width={650} alt="Window screen washing" />
-      <Image src={one} width={650} alt="Window washing first floor" />
-      <Image src={two} width={650} alt="Window washing second floor" />
+      <Image src={w} width={650} alt="Window screen washing" />
+      <Image src={s} width={650} alt="Window washing first floor" />
+      <Image src={t} width={650} alt="Window washing second floor" />
     </div>
 
+    <style>
+      .embed-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        margin-top: 1rem;
+      }
+      .embed-container iframe,
+      .embed-container object,
+      .embed-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+
+    <div class="embed-container">
+      <iframe
+        src="https://www.youtube.com/embed/NF7EQ7Rq1eA?si=lkzTEe7HLR6BbG8x"
+        frameborder="0"
+        allowfullscreen></iframe>
+    </div>
+    <div class="embed-container">
+      <iframe
+        src="https://www.youtube.com/embed/NF7EQ7Rq1eA"
+        frameborder="0"
+        allowfullscreen></iframe>
+    </div>
+    <div class="embed-container">
+      <iframe
+        src="https://www.youtube.com/embed/F0AJyVa-x5Q?si=DVl9lOVG8_JtHpxl"
+        frameborder="0"
+        allowfullscreen></iframe>
+    </div>
     <!-- <iframe
       class="pt-2 m-auto"
       width="560"
