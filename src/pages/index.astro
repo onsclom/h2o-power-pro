@@ -39,34 +39,88 @@ import Review from "../components/Review.astro"
     </ImageTextCombo>
   </MainSection>
 
-  <div class="flex flex-wrap items-center justify-center pt-5">
-    <Review name="Roy Coronado">
-      Just had Kevin hot pressure washed my back patio. I tried doing myself but
-      there is a difference between home depot products and professional
-      products. Between the professional cleaners and the 200 plus degree
-      pressure wash the patio looks like new again. What a great job and thank
-      you!
-    </Review>
-    <Review name="Joan MacFadgen">
-      This company does not fool around. They get the job done in a professional
-      and extremely efficient manner. Excellent results! Highly recommend!!
-    </Review>
-    <Review name="Kindra Roberts">
-      The owner of H20 Power Pro, Kevin, does AMAZING work!! He was prompt,
-      efficient, and I plan on recommending him to friends and family.
-    </Review>
-    <Review name="Pat Thomas">
-      Kevin does fabulous work! Very personable and honest!
-    </Review>
-    <Review name="Julie Conq-Mars">
-      Kevin did an awesome job of cleaning calcium off of large fountains in our
-      community. He did the job that no one else could seem to accomplish. They
-      now look beautiful again! Like new! So grateful. Highly recommend!
-    </Review>
-    <Review name="Dye Trust">
-      This company is fabulous! They went way and beyond to get the job done.
-      They paid attention to detail, and made us a very happy customer who will
-      definitely be using them again!
-    </Review>
-  </div>
+  <MainSection>
+    <div
+      class="max-w-lg p-4 m-auto mt-8 overflow-hidden border-2 shadow-inner h-72"
+    >
+      <div class="flex flex-col items-center space-y-2 divide-y-2 animate">
+        <Review name="Roy Coronado">
+          Just had Kevin hot pressure washed my back patio. I tried doing myself
+          but there is a difference between home depot products and professional
+          products. Between the professional cleaners and the 200 plus degree
+          pressure wash the patio looks like new again. What a great job and
+          thank you!
+        </Review>
+        <Review name="Joan MacFadgen">
+          This company does not fool around. They get the job done in a
+          professional and extremely efficient manner. Excellent results! Highly
+          recommend!!
+        </Review>
+        <Review name="Kindra Roberts">
+          The owner of H20 Power Pro, Kevin, does AMAZING work!! He was prompt,
+          efficient, and I plan on recommending him to friends and family.
+        </Review>
+        <Review name="Pat Thomas">
+          Kevin does fabulous work! Very personable and honest!
+        </Review>
+        <Review name="Julie Conq-Mars">
+          Kevin did an awesome job of cleaning calcium off of large fountains in
+          our community. He did the job that no one else could seem to
+          accomplish. They now look beautiful again! Like new! So grateful.
+          Highly recommend!
+        </Review>
+        <Review name="Dye Trust">
+          This company is fabulous! They went way and beyond to get the job
+          done. They paid attention to detail, and made us a very happy customer
+          who will definitely be using them again!
+        </Review>
+
+        <Review name="Roy Coronado">
+          Just had Kevin hot pressure washed my back patio. I tried doing myself
+          but there is a difference between home depot products and professional
+          products. Between the professional cleaners and the 200 plus degree
+          pressure wash the patio looks like new again. What a great job and
+          thank you!
+        </Review>
+        <Review name="Joan MacFadgen">
+          This company does not fool around. They get the job done in a
+          professional and extremely efficient manner. Excellent results! Highly
+          recommend!!
+        </Review>
+        <Review name="Kindra Roberts">
+          The owner of H20 Power Pro, Kevin, does AMAZING work!! He was prompt,
+          efficient, and I plan on recommending him to friends and family.
+        </Review>
+        <Review name="Pat Thomas">
+          Kevin does fabulous work! Very personable and honest!
+        </Review>
+        <Review name="Julie Conq-Mars">
+          Kevin did an awesome job of cleaning calcium off of large fountains in
+          our community. He did the job that no one else could seem to
+          accomplish. They now look beautiful again! Like new! So grateful.
+          Highly recommend!
+        </Review>
+        <Review name="Dye Trust">
+          This company is fabulous! They went way and beyond to get the job
+          done. They paid attention to detail, and made us a very happy customer
+          who will definitely be using them again!
+        </Review>
+      </div>
+    </div>
+  </MainSection>
+
+  <style>
+    .animate {
+      animation: slide 40s linear infinite;
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-50%);
+      }
+    }
+  </style>
 </Layout>
