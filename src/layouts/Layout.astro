@@ -13,6 +13,13 @@ import YoutubeIcon from "../components/icons/YoutubeIcon.astro"
 import { ViewTransitions } from "astro:transitions"
 
 const { title } = Astro.props
+
+const links = [
+  ["/", "Home"],
+  ["/services", "Services"],
+  ["/gallery", "Gallery"],
+  ["/purchase", "Purchase"],
+]
 ---
 
 <!doctype html>
@@ -35,10 +42,7 @@ const { title } = Astro.props
   </head>
   <body class="antialiased text-slate-600">
     <main class="font-serif">
-      <header
-        class="pb-3 mb-2 text-gray-200 bg-blue-900 pt-7"
-        transition:persist
-      >
+      <header class="pb-3 mb-2 text-gray-200 bg-blue-900 pt-7">
         <h1 class="py-4 text-5xl font-extrabold text-center text-white">
           H2O Power Pro
         </h1>
@@ -62,11 +66,21 @@ const { title } = Astro.props
         </div>
 
         <div>
-          <nav class="flex justify-center text-lg text-white sm:text-xl">
-            <a class="p-4 hover:bg-slate-950" href="/">Home</a>
-            <a class="p-4 hover:bg-slate-950" href="/services">Services</a>
-            <a class="p-4 hover:bg-slate-950" href="/gallery">Gallery</a>
-            <a class="p-4 hover:bg-slate-950" href="/purchase">Purchase</a>
+          <nav class="flex justify-center space-x-1 text-lg text-white">
+            {
+              links.map(([path, label]) =>
+                Astro.url.pathname === path ? (
+                  <p class="px-3 py-2 text-gray-400">{label}</p>
+                ) : (
+                  <a
+                    class="px-3 py-2 transition-all rounded-md hover:bg-slate-950"
+                    href={path}
+                  >
+                    {label}
+                  </a>
+                )
+              )
+            }
           </nav>
         </div>
       </header>
