@@ -1,9 +1,14 @@
-<!--?xml version="1.0" encoding="iso-8859-1"?--><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+---
+type Props = {
+  width?: string
+}
+
+const { width } = Astro.props
+---
+
 <svg
-  width="3rem"
-  height="3rem"
+  width={width || `3rem`}
   version="1.1"
-  id="Layer_1"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   viewBox="0 0 228.097 228.097"

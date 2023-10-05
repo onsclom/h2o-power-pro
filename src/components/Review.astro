@@ -1,25 +1,38 @@
 ---
 type Props = {
   name: string
+  type: "google" | "yelp"
+  link: string
 }
 
-const { name } = Astro.props
+const { name, type, link } = Astro.props
 
+import GoogleIcon from "./icons/GoogleIcon.astro"
 import StarIcon from "./icons/StarIcon.astro"
+import YelpIcon from "./icons/YelpIcon.astro"
 ---
 
-<div class="w-full p-3">
-  <!-- <div class="flex"> -->
-  <p class="mr-1 font-bold">{name}</p>
-  <div class="flex pt-1 text-yellow-400">
-    <StarIcon />
-    <StarIcon />
-    <StarIcon />
-    <StarIcon />
-    <StarIcon />
+<a
+  href={link}
+  class="w-full p-3 px-5 py-8 transition-colors hover:cursor-pointer odd:bg-slate-50 hover:bg-blue-100"
+>
+  <div class="flex justify-between align-middle text-slate-700">
+    <div>
+      <p class="font-bold">{name}</p>
+      <div class="flex pt-1 text-yellow-400">
+        <StarIcon />
+        <StarIcon />
+        <StarIcon />
+        <StarIcon />
+        <StarIcon />
+      </div>
+    </div>
+
+    {type == "google" && <GoogleIcon width="2rem" />}
+    {type == "yelp" && <YelpIcon width="2rem" />}
   </div>
-  <!-- </div> -->
-  <p class="pt-2 text-justify">
+
+  <p class="pt-4 text-justify">
     <slot />
   </p>
-</div>
+</a>
