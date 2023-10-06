@@ -25,7 +25,9 @@ import np1 from "../images/powerwash/new/one.jpg"
 import np4 from "../images/powerwash/new/four.jpg"
 import np5 from "../images/powerwash/new/five.jpg"
 import np6 from "../images/powerwash/new/six.jpg"
-import gun from "../images/gun.png"
+
+import before from "../images/powerwash/before.jpg"
+import after from "../images/powerwash/after.jpg"
 ---
 
 <Layout title="Gallery" pathname="/gallery">
@@ -53,6 +55,11 @@ import gun from "../images/gun.png"
         alt="Window washing first floor"
       />
       <Image src={np6} width={650} alt="Window washing second floor" />
+    </div>
+
+    <div class="grid w-full grid-cols-2 gap-2 pt-5">
+      <Image src={before} width={650} alt="Window washing second floor" />
+      <Image src={after} width={650} alt="Window washing second floor" />
     </div>
 
     <!-- <Image class="pt-2" src={np1} alt="H2O Power Pro gear" />
