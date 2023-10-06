@@ -8,10 +8,63 @@ import s from "../images/SQScreen.jpg"
 import t from "../images/SQTruck.jpg"
 
 import MainSection from "../components/MainSection.astro"
+
+import t1 from "../images/trash/Trash1.jpg"
+import t2 from "../images/trash/Trash2.jpg"
+import t3 from "../images/trash/Trash3.jpg"
+import t4 from "../images/trash/Trash4.jpg"
+import tbc from "../images/trash/TrashBinCleaning.png"
+
+import power1 from "../images/powerwash/One.jpg"
+import power2 from "../images/powerwash/Wand.jpg"
+import power3 from "../images/powerwash/waterfalls.jpg"
+
+import np1 from "../images/powerwash/new/one.jpg"
+import np2 from "../images/powerwash/new/two.jpg"
+import np3 from "../images/powerwash/new/three.jpg"
+import np4 from "../images/powerwash/new/four.jpg"
+import np5 from "../images/powerwash/new/five.jpg"
+import np6 from "../images/powerwash/new/six.jpg"
 ---
 
 <Layout title="Gallery" pathname="/gallery">
   <MainSection>
+    <h2 class="pt-5 text-3xl font-bold text-center text-slate-900">
+      Power Washing
+    </h2>
+    <Image class="pt-2" src={power1} alt="H2O Power Pro gear" />
+    <Image class="pt-2" src={power2} alt="H2O Power Pro gear" />
+
+    <div
+      class="pt-5"
+      style="display: grid; grid-template-columns: repeat(2, 1fr); 
+      grid-template-rows: repeat(2, 1fr); 
+      gap: .5rem;
+      width: 100%; 
+      aspect-ratio: 1/1;"
+    >
+      <Image src={np4} width={650} alt="H2O Power Pro gear" />
+      <Image src={np1} width={650} alt="Window screen washing" />
+      <Image
+        style="aspect-ratio: 1/1; object-fit: cover"
+        src={np5}
+        width={650}
+        alt="Window washing first floor"
+      />
+      <Image src={np6} width={650} alt="Window washing second floor" />
+    </div>
+
+    <!-- <Image class="pt-2" src={np1} alt="H2O Power Pro gear" />
+    <Image class="pt-2" src={np2} alt="H2O Power Pro gear" />
+    <Image class="pt-2" src={np3} alt="H2O Power Pro gear" />
+    <Image class="pt-2" src={np4} alt="H2O Power Pro gear" />
+    <Image class="pt-2" src={np5} alt="H2O Power Pro gear" />
+    <Image class="pt-2" src={np6} alt="H2O Power Pro gear" /> -->
+
+    <h2 class="pt-5 text-3xl font-bold text-center text-slate-900">
+      Window Service
+    </h2>
+
     <div
       class="pt-5"
       style="display: grid; grid-template-columns: repeat(2, 1fr); 
@@ -21,7 +74,6 @@ import MainSection from "../components/MainSection.astro"
       aspect-ratio: 1/1;"
     >
       <Image src={e} width={650} alt="H2O Power Pro gear" />
-      <!-- switch these ones -->
       <Image src={w} width={650} alt="Window screen washing" />
       <Image src={s} width={650} alt="Window washing first floor" />
       <Image src={t} width={650} alt="Window washing second floor" />
@@ -64,6 +116,25 @@ import MainSection from "../components/MainSection.astro"
         src="https://www.youtube.com/embed/F0AJyVa-x5Q?si=DVl9lOVG8_JtHpxl"
         frameborder="0"
         allowfullscreen></iframe>
+    </div>
+
+    <h2 class="pt-5 text-3xl font-bold text-center text-slate-900">
+      Trash Bin Service
+    </h2>
+
+    <Image src={tbc} class="m-auto" alt="H2O Power Pro gear" />
+    <div
+      class="pt-5"
+      style="display: grid; grid-template-columns: repeat(2, 1fr); 
+      grid-template-rows: repeat(2, 1fr); 
+      gap: .5rem;
+      width: 100%; 
+      aspect-ratio: 1/1;"
+    >
+      <Image src={t1} width={650} alt="H2O Power Pro gear" />
+      <Image src={t2} width={650} alt="Window screen washing" />
+      <Image src={t3} width={650} alt="Window washing first floor" />
+      <Image src={t4} width={650} alt="Window washing second floor" />
     </div>
   </MainSection>
 </Layout>

@@ -10,6 +10,7 @@ import wand from "../images/wand.jpg"
 import truck from "../images/truck.webp"
 
 import Reviews from "../components/Reviews.astro"
+import equipment from "../components/sections/equipment.webp"
 ---
 
 <Layout title="H2O Power Pro" pathname={"/"}>
@@ -35,6 +36,24 @@ import Reviews from "../components/Reviews.astro"
         addition to all your cleaning needs we offer paver sealing to enhance
         the durability, preventing weathering and stains while maintaining a
         vibrant appearance.
+      </ImageText>
+    </ImageTextCombo>
+    <ImageTextCombo>
+      <BasicImage slot="image" src={equipment} alt="Company equipment" />
+      <ImageText slot="text">
+        <ul class="list-disc list-inside">
+          <li>
+            <b>High Pressure</b> at 220 degrees with a PSI of 3500 at 5 GPM.
+          </li>
+          <li>Hard surfaces, structures, walls and more.</li>
+          <li>Remove stains, graffiti and efflorescence.</li>
+          <li>
+            <b>Low Pressure</b> using pure deionized spot free H2O.
+          </li>
+          <li>Window and screen cleaning</li>
+          <li>Solar Panels</li>
+          <li>Marine, RV and Auto</li>
+        </ul>
       </ImageText>
     </ImageTextCombo>
   </MainSection>
