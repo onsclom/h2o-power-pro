@@ -22,10 +22,9 @@ const links = [
   ["/purchase", "Payment"],
 ]
 
-import gun from "../images/gun.png"
-
-import { Image } from "astro:assets"
 import PowerWasher from "../components/PowerWasher.astro"
+
+const atHome = pathname === "/"
 ---
 
 <!doctype html>
@@ -68,10 +67,12 @@ import PowerWasher from "../components/PowerWasher.astro"
         }
       </nav>
       <header
-        class="pb-3 mb-2 text-gray-200 pt-10"
+        class=`pb-3 mb-2 text-gray-200 pt-10 ${atHome ? "": "hidden sm:block"}`
         style="background-color: #A6A7A7"
       >
-        <h1 class="hidden">H2O Power Pro</h1>
+        <h1 class="hidden">
+          H2O Power Pro Pressure Washing Las Vegas Henderson
+        </h1>
         <!-- <Image src={gun} alt="H2O Power Pro" class="mx-auto" /> -->
         <div class="max-w-md m-auto">
           <PowerWasher />
@@ -97,6 +98,8 @@ import PowerWasher from "../components/PowerWasher.astro"
           </p>
         </div>
       </header>
+
+      <div class={`${atHome ? `` : `pt-14 sm:pt-0`}`}></div>
 
       <slot />
 
