@@ -25,6 +25,7 @@ const links = [
 import gun from "../images/gun.png"
 
 import { Image } from "astro:assets"
+import PowerWasher from "../components/PowerWasher.astro"
 ---
 
 <!doctype html>
@@ -47,13 +48,38 @@ import { Image } from "astro:assets"
   </head>
   <body class="antialiased text-slate-600">
     <main class="font-serif">
-      <header class="pb-3 mb-2 text-gray-200 bg-gray-600 pt-7">
-        <h1 class="py-4 text-5xl font-extrabold text-center text-white">
-          H2O Power Pro
-        </h1>
-        <Image src={gun} alt="H2O Power Pro" class="mx-auto" />
-
-        <div class="text-xl text-center sm:flex sm:gap-4 sm:justify-center">
+      <nav
+        class="flex justify-center space-x-1 text-lg w-full m-auto fixed top-0"
+        style="color: #0313A2; background-color: #A6A7A7"
+      >
+        {
+          links.map(([path, label]) =>
+            pathname === path ? (
+              <p class="px-3 py-2 border-b-4 border-gray-50">{label}</p>
+            ) : (
+              <a
+                class="px-3 py-2 transition-all hover:underline rounded-md hover:bg-slate-200"
+                href={path}
+              >
+                {label}
+              </a>
+            )
+          )
+        }
+      </nav>
+      <header
+        class="pb-3 mb-2 text-gray-200 pt-10"
+        style="background-color: #A6A7A7"
+      >
+        <h1 class="hidden">H2O Power Pro</h1>
+        <!-- <Image src={gun} alt="H2O Power Pro" class="mx-auto" /> -->
+        <div class="max-w-md m-auto">
+          <PowerWasher />
+        </div>
+        <div
+          class="text-xl text-center sm:flex sm:gap-4 sm:justify-center px-2"
+          style="color: #0313A2"
+        >
           <p class="flex items-center justify-center">
             <PhoneIcon />
             <a class="p-3 pl-2 text-xl hover:underline" href="tel:725-303-9006">
@@ -69,25 +95,6 @@ import { Image } from "astro:assets"
               Owner@H2OPowerPro.com
             </a>
           </p>
-        </div>
-
-        <div>
-          <nav class="flex justify-center space-x-1 text-lg text-white">
-            {
-              links.map(([path, label]) =>
-                pathname === path ? (
-                  <p class="px-3 py-2 underline">{label}</p>
-                ) : (
-                  <a
-                    class="px-3 py-2 transition-all rounded-md hover:bg-slate-950"
-                    href={path}
-                  >
-                    {label}
-                  </a>
-                )
-              )
-            }
-          </nav>
         </div>
       </header>
 
@@ -118,7 +125,10 @@ import { Image } from "astro:assets"
         <a href="https://www.instagram.com/h2opowerpro/" aria-label="Instagram">
           <InstagramIcon />
         </a>
-        <a href="https://www.youtube.com/@H2OPowerPro" aria-label="YouTube">
+        <a
+          href="https://www.youtube.com/@H2OPowerProLasVegas"
+          aria-label="YouTube"
+        >
           <YoutubeIcon />
         </a>
       </footer>
