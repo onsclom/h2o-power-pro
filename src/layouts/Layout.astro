@@ -50,22 +50,32 @@ const atHome = pathname === "/"
   <body class="antialiased text-slate-600">
     <main class="font-serif">
       <nav
-        class="flex justify-center space-x-1 text-lg w-full m-auto fixed top-0"
-        style="color: #0313A2; background-color: #A6A7A7"
+        class="flex justify-center space-x-1 text-lg w-full m-auto fixed top-0 backdrop-blur-xl"
+        style="color: #0313A2; background-color: #A6A7A788"
       >
         {
-          links.map(([path, label]) =>
-            pathname === path ? (
-              <p class="px-3 py-2 border-b-4 border-gray-50">{label}</p>
-            ) : (
-              <a
-                class="px-3 py-2 transition-all hover:underline rounded-md hover:bg-slate-200"
-                href={path}
-              >
-                {label}
-              </a>
+          links.map(([path, label]) => {
+            const current = pathname === path
+
+            return (
+              <div style="flex">
+                <a
+                  class="px-3 py-2 transition-all hover:underline rounded-md hover:bg-slate-200 block"
+                  href={path}
+                >
+                  {label}
+                </a>
+                <div
+                  class="h-1"
+                  style={
+                    current
+                      ? "view-transition-name: current; background-color: #0313A2"
+                      : ""
+                  }
+                />
+              </div>
             )
-          )
+          })
         }
       </nav>
       <header
@@ -75,7 +85,6 @@ const atHome = pathname === "/"
         <h1 class="hidden">
           H2O Power Pro Pressure Washing Las Vegas Henderson
         </h1>
-        <!-- <Image src={gun} alt="H2O Power Pro" class="mx-auto" /> -->
         <div class="max-w-md m-auto">
           <PowerWasher />
         </div>
