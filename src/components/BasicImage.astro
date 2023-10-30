@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets"
+import { Picture } from "astro:assets"
 
 type Props = {
   src: ImageMetadata
@@ -9,4 +9,6 @@ type Props = {
 const { src, alt } = Astro.props
 ---
 
-<Image class="m-auto shadow-xl group-odd:order-1" src={src} alt={alt} />
+<div class="shadow-xl group-odd:order-1 m-auto">
+  <Picture src={src} alt={alt} />
+</div>
