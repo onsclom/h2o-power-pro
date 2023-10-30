@@ -10,67 +10,64 @@ import bricks from "./bricks.webp"
 import window from "./ScreenWashing.jpg"
 import solar from "./solar.webp"
 import binservice from "../../images/trash/TrashBinCleaning.png"
+import ImageTextSection from "../ImageTextSection.astro"
 ---
 
 <MainSection>
-  <ImageTextCombo>
-    <BasicImage
-      slot="image"
-      reverse={true}
-      src={bricks}
-      alt="Pavers before and after"
-    />
-    <ImageText slot="text">
-      <p><b>H2O Power Pro - Paver Cleaning and Sealing</b></p>
-      <p>
-        Paver sealing is a great option that offers immediate results enhancing
-        the beauty and character of your home producing a natural look or even a
-        high gloss finish. More importantly forming a protective barrier from
-        weather and staining.
-      </p>
-    </ImageText>
-  </ImageTextCombo>
+  <ImageTextSection>
+    <ImageTextCombo>
+      <BasicImage slot="image" src={bricks} alt="Pavers before and after" />
+      <ImageText slot="text">
+        <p><b>H2O Power Pro - Paver Cleaning and Sealing</b></p>
+        <p>
+          Paver sealing is a great option that offers immediate results
+          enhancing the beauty and character of your home producing a natural
+          look or even a high gloss finish. More importantly forming a
+          protective barrier from weather and staining.
+        </p>
+      </ImageText>
+    </ImageTextCombo>
 
-  <ImageTextCombo>
-    <BasicImage slot="image" src={window} alt="Window washing" />
-    <ImageText slot="text">
-      <p><b>H2O Power Pro - Window Cleaning</b></p>
-      <p>
-        Our exterior window cleaning service provides amazing results using a
-        PURE SPOT FREE water fed pole. The soft brush does all the work leaving
-        a spot free shine. Our optional screen cleaning service will elevate the
-        appearance of your home. Contact us today for a free estimate.
-      </p>
-    </ImageText>
-  </ImageTextCombo>
+    <ImageTextCombo>
+      <BasicImage slot="image" src={window} alt="Window washing" />
+      <ImageText slot="text">
+        <p><b>H2O Power Pro - Window Cleaning</b></p>
+        <p>
+          Our exterior window cleaning service provides amazing results using a
+          PURE SPOT FREE water fed pole. The soft brush does all the work
+          leaving a spot free shine. Our optional screen cleaning service will
+          elevate the appearance of your home. Contact us today for a free
+          estimate.
+        </p>
+      </ImageText>
+    </ImageTextCombo>
 
-  <ImageTextCombo>
-    <BasicImage slot="image" reverse={true} src={solar} alt="Washing solar" />
-    <ImageText slot="text">
-      <p><b>H2O Power Pro - Solar Panel Cleaning</b></p>
-      <p>
-        Protect your investment and maximize the efficiency of your system. We
-        do not use any chemicals that could potentially harm your solar panel
-        system. We truly rely on the PURE SPOT FREE WATER method to ensure your
-        system is protected and cleaned.
-      </p>
-    </ImageText>
-  </ImageTextCombo>
+    <ImageTextCombo>
+      <BasicImage slot="image" src={solar} alt="Washing solar" />
+      <ImageText slot="text">
+        <p><b>H2O Power Pro - Solar Panel Cleaning</b></p>
+        <p>
+          Protect your investment and maximize the efficiency of your system. We
+          do not use any chemicals that could potentially harm your solar panel
+          system. We truly rely on the PURE SPOT FREE WATER method to ensure
+          your system is protected and cleaned.
+        </p>
+      </ImageText>
+    </ImageTextCombo>
 
-  <ImageTextCombo>
-    <BasicImage slot="image" src={binservice} alt="Trash bin service" />
-    <ImageText slot="text">
-      <p><b>H2O Power Pro - Trash Bin Service</b></p>
-      <p>
-        Dirty Bins Stink! Let us handle this dirty job for you, eliminating odor
-        and bacteria while providing quick and convenient curbside service.
-        Simply leave your empty bins out at the curb, and we will handle the
-        rest! Set up a one time or subscription service by clicking <Link
-          href="/purchase"
-        >
-          here
-        </Link>.
-      </p>
-    </ImageText>
-  </ImageTextCombo>
+    <ImageTextCombo>
+      <BasicImage slot="image" src={binservice} alt="Trash bin service" />
+      <ImageText slot="text">
+        <p><b>H2O Power Pro - Trash Bin Service</b></p>
+        <p>
+          Dirty Bins Stink! Let us handle this dirty job for you, eliminating
+          odor and bacteria while providing quick and convenient curbside
+          service. Simply leave your empty bins out at the curb, and we will
+          handle the rest! Set up a one time or subscription service by clicking
+
+          <Link href="/purchase">here</Link>.
+        </p>
+      </ImageText>
+    </ImageTextCombo>
+  </ImageTextSection>
 </MainSection>

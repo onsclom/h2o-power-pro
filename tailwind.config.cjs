@@ -8,5 +8,5 @@ module.exports = {
         "Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif",
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 }

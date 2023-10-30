@@ -1,7 +1,4 @@
-TODO:
+possible improvements:
 
-- gallery
-- reviews
-- gallery
-
-svgomg to optimize svgs
+- analytics
+- CMS (SSR or trigger rebuilds)

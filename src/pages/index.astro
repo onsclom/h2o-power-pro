@@ -6,56 +6,36 @@ import ImageTextCombo from "../components/ImageTextCombo.astro"
 import ImageText from "../components/ImageText.astro"
 import BasicImage from "../components/BasicImage.astro"
 
-import wand from "../images/wand.jpg"
-import truck from "../images/truck.webp"
-
 import Reviews from "../components/Reviews.astro"
-import equipment from "../components/sections/equipment.webp"
+import { getCollection } from "astro:content"
+
+const aboutContent = await getCollection("about")
+
+import ImageTextSection from "../components/ImageTextSection.astro"
 ---
 
 <Layout title="H2O Power Pro" pathname={"/"}>
   <MainSection>
-    <ImageTextCombo>
-      <BasicImage slot="image" src={wand} alt="Washing brick wall" />
-      <ImageText slot="text">
-        We are a Nevada born company serving Las Vegas, Henderson and the
-        surrounding valley. H2O Power Pro will meet all your residential and
-        commercial needs. We are committed to providing top-notch services that
-        not only cleans but protects your home or business from future damage.
-        We take pride in our work and strive for complete customer satisfaction
-        with every job we do. We are Nevada licensed and insured.
-      </ImageText>
-    </ImageTextCombo>
-    <ImageTextCombo>
-      <BasicImage reverse={true} slot="image" src={truck} alt="Company truck" />
-      <ImageText slot="text">
-        H2O Power Pro invests in the latest state of the art equipment featuring
-        a 220-degree high pressure washer removing stubborn stains using
-        industry leading cleaning agents. We also offer soft washing with Pure
-        Water taking great care in treating your windows and solar panels. In
-        addition to all your cleaning needs we offer paver sealing to enhance
-        the durability, preventing weathering and stains while maintaining a
-        vibrant appearance.
-      </ImageText>
-    </ImageTextCombo>
-    <ImageTextCombo>
-      <BasicImage slot="image" src={equipment} alt="Company equipment" />
-      <ImageText slot="text">
-        <ul class="list-disc list-inside">
-          <li>
-            <b>High Pressure</b> at 220 degrees with a PSI of 3500 at 5 GPM.
-          </li>
-          <li>Hard surfaces, structures, walls and more.</li>
-          <li>Remove stains, graffiti and efflorescence.</li>
-          <li>
-            <b>Low Pressure</b> using pure deionized spot free H2O.
-          </li>
-          <li>Window and screen cleaning</li>
-          <li>Solar Panels</li>
-          <li>Marine, RV and Auto</li>
-        </ul>
-      </ImageText>
-    </ImageTextCombo>
+    <ImageTextSection>
+      {
+        aboutContent.map(async (content) => {
+          const renderedHtml = await content.render()
+          const Content = renderedHtml.Content
+          return (
+            <ImageTextCombo>
+              <BasicImage
+                slot="image"
+                src={content.data.image}
+                alt={content.data.alt}
+              />
+              <ImageText slot="text">
+                <Content />
+              </ImageText>
+            </ImageTextCombo>
+          )
+        })
+      }
+    </ImageTextSection>
   </MainSection>
 
   <MainSection>
