@@ -49,37 +49,8 @@ const atHome = pathname === "/"
   </head>
   <body class="antialiased text-slate-600">
     <main class="font-serif">
-      <nav
-        class="flex justify-center space-x-1 text-lg w-full m-auto fixed top-0 backdrop-blur-xl"
-        style="color: #0313A2; background-color: #A6A7A788"
-      >
-        {
-          links.map(([path, label]) => {
-            const current = pathname === path
-
-            return (
-              <div style="flex">
-                <a
-                  class="px-3 py-2 transition-all hover:underline rounded-md hover:bg-slate-200 block"
-                  href={path}
-                >
-                  {label}
-                </a>
-                <div
-                  class="h-1"
-                  style={
-                    current
-                      ? "view-transition-name: current; background-color: #0313A2"
-                      : ""
-                  }
-                />
-              </div>
-            )
-          })
-        }
-      </nav>
       <header
-        class=`pb-3 text-gray-200 pt-10 ${atHome ? "": "hidden sm:block"}`
+        class=`pb-3 text-gray-200 ${atHome ? "": "hidden sm:block"}`
         style="background-color: #A6A7A7"
       >
         <h1 class="hidden">
@@ -109,8 +80,37 @@ const atHome = pathname === "/"
           </p>
         </div>
       </header>
+      <nav
+        class="flex justify-center space-x-1 text-lg w-full m-auto sticky top-0"
+        style="color: #0313A2; background-color: #A6A7A7"
+      >
+        {
+          links.map(([path, label]) => {
+            const current = pathname === path
 
-      <div class={`${atHome ? `` : `pt-14 sm:pt-0`}`}></div>
+            return (
+              <div style="flex">
+                <a
+                  class="px-3 py-2 transition-all hover:underline rounded-md hover:bg-slate-200 block"
+                  href={path}
+                >
+                  {label}
+                </a>
+                <div
+                  class="h-1"
+                  style={
+                    current
+                      ? "view-transition-name: current; background-color: #0313A2"
+                      : ""
+                  }
+                />
+              </div>
+            )
+          })
+        }
+      </nav>
+
+      <!-- <div class={`${atHome ? `` : `pt-14 sm:pt-0`}`}></div> -->
 
       <slot />
 
