@@ -49,7 +49,7 @@ const atHome = pathname === "/"
   <body class="antialiased text-slate-600">
     <main class="font-serif">
       <header
-        class=`pb-3 text-gray-200 ${atHome ? "": "hidden sm:block"}`
+        class=`text-gray-200 ${atHome ? "": "hidden sm:block"}`
         style="background-color: #A6A7A7"
       >
         <h1 class="hidden">
@@ -88,21 +88,21 @@ const atHome = pathname === "/"
             const current = pathname === path
 
             return (
-              <div style="flex">
+              <div>
                 <a
-                  class="px-3 py-2 transition-all hover:underline rounded-md hover:bg-slate-200 block"
+                  class="px-3 py-2 transition-all hover:underline rounded-md hover:bg-slate-200 block relative"
                   href={path}
                 >
                   {label}
+                  <div
+                    class="h-1 absolute bottom-0 left-0 right-0"
+                    style={
+                      current
+                        ? "view-transition-name: current; background-color: #0313A2"
+                        : ""
+                    }
+                  />
                 </a>
-                <div
-                  class="h-1"
-                  style={
-                    current
-                      ? "view-transition-name: current; background-color: #0313A2"
-                      : ""
-                  }
-                />
               </div>
             )
           })
