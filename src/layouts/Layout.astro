@@ -19,7 +19,7 @@ const links = [
   ["/", "Home"],
   ["/services", "Services"],
   ["/gallery", "Gallery"],
-  ["/purchase", "Payment"],
+  ["/payment", "Payment"],
 ]
 
 import PowerWasher from "../components/PowerWasher.astro"
@@ -106,7 +106,7 @@ const atHome = pathname === "/"
       <slot />
 
       <footer
-        class="flex justify-center gap-4 pb-5 text-center pt-7"
+        class="flex justify-center gap-4 pb-5 text-center pt-7 sm:pt-14"
         transition:persist
       >
         <a
