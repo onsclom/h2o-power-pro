@@ -1,30 +1,30 @@
 ---
 interface Props {
-  title: string
-  pathname: string
+  title: string;
+  pathname: string;
 }
 
-import PhoneIcon from "../components/icons/PhoneIcon.astro"
-import MailIcon from "../components/icons/MailIcon.astro"
-import FacebookIcon from "../components/icons/FacebookIcon.astro"
-import GoogleIcon from "../components/icons/GoogleIcon.astro"
-import YelpIcon from "../components/icons/YelpIcon.astro"
-import InstagramIcon from "../components/icons/InstagramIcon.astro"
-import YoutubeIcon from "../components/icons/YoutubeIcon.astro"
-import { ViewTransitions } from "astro:transitions"
+import PhoneIcon from "../components/icons/PhoneIcon.astro";
+import MailIcon from "../components/icons/MailIcon.astro";
+import FacebookIcon from "../components/icons/FacebookIcon.astro";
+import GoogleIcon from "../components/icons/GoogleIcon.astro";
+import YelpIcon from "../components/icons/YelpIcon.astro";
+import InstagramIcon from "../components/icons/InstagramIcon.astro";
+import YoutubeIcon from "../components/icons/YoutubeIcon.astro";
+import { ViewTransitions } from "astro:transitions";
 
-const { title, pathname } = Astro.props
+const { title, pathname } = Astro.props;
 
 const links = [
   ["/", "Home"],
   ["/services", "Services"],
   ["/gallery", "Gallery"],
   ["/payment", "Payment"],
-]
+];
 
-import PowerWasher from "../components/PowerWasher.astro"
+import PowerWasher from "../components/PowerWasher.astro";
 
-const atHome = pathname === "/"
+const atHome = pathname === "/";
 ---
 
 <!doctype html>
@@ -43,7 +43,22 @@ const atHome = pathname === "/"
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💧</text></svg>"
     />
+
     <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-11364732847"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "AW-11364732847");
+    </script>
+
     <ViewTransitions />
   </head>
   <body class="antialiased text-slate-600">
@@ -85,7 +100,7 @@ const atHome = pathname === "/"
       >
         {
           links.map(([path, label]) => {
-            const current = pathname === path
+            const current = pathname === path;
 
             return (
               <div>
@@ -104,7 +119,7 @@ const atHome = pathname === "/"
                   />
                 </a>
               </div>
-            )
+            );
           })
         }
       </nav>
