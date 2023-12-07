@@ -59,8 +59,24 @@ const atHome = pathname === "/";
       gtag("config", "AW-11364732847");
     </script>
 
-    <ViewTransitions />
+    <script is:inline>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-11364732847/aCfDCMmV6voYEK-fkKsq",
+          event_callback: callback,
+        });
+        return false;
+      }
+    </script>
   </head>
+
+  <ViewTransitions />
+
   <body class="antialiased text-slate-600">
     <main class="font-serif">
       <header
@@ -79,7 +95,11 @@ const atHome = pathname === "/";
         >
           <p class="flex items-center justify-center">
             <PhoneIcon />
-            <a class="p-3 pl-2 text-xl hover:underline" href="tel:725-303-9006">
+            <a
+              class="p-3 pl-2 text-xl hover:underline"
+              href="tel:725-303-9006"
+              onclick="gtag_report_conversion()"
+            >
               725-303-9006
             </a>
           </p>
@@ -88,6 +108,7 @@ const atHome = pathname === "/";
             <a
               class="p-3 pl-2 text-xl hover:underline"
               href="mailto:owner@H2OPowerPro.com"
+              onclick="gtag_report_conversion()"
             >
               Owner@H2OPowerPro.com
             </a>
